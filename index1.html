@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAMS</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!--script async defer src="https:teams.microsoft.com/share/launcher.js"></script-->
+</head>
+
+<body>
+    <!--
+    <span
+    class="teams-share-button"
+    data-href="https:teams.microsoft.com/l/meetup-join/19%3ameeting_OWM1MmJjOWEtNDVlNi00ZDc4LTk2NjctMjBiOTlkZTQyYmJh%40thread.v2/0?context=%7b%22Tid%22%3a%22346a1d1d-e75b-4753-902b-74ed60ae77a1%22%2c%22Oid%22%3a%22a6b68a05-d4fc-427e-a84d-98410bfc059d%22%7d"
+    data-msg-text="Default Message"
+    data-assign-title="Default Assignment Title"
+    data-assign-instr="Default Assignment Instructions"
+></span>
+-->
+    <button onclick="makeTeamsCall()">Hacer una llamada de Teams</button>
+
+    <script>
+        function makeTeamsCall() {
+            //Aquí debes implementar la lógica para realizar la llamada de Teams
+            //Puedes usar el token de acceso obtenido para realizar la llamada a la API de Teams
+            //Ejemplo: Usar Microsoft Graph API
+
+            //Ejemplo de solicitud de llamada a Microsoft Graph API
+            //const accessToken = 'eyJ0eXAiOiJKV1QiLCJub25jZSI6IndmZHlJNVJidS1RTGZ4Y3Y3NXlJXzdNaW1EamF5dGo3WWVENzkzeGxJekUiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVCM25SeHRRN2ppOGVORGMzRnkwNUtmOTdaRSIsImtpZCI6IjVCM25SeHRRN2ppOGVORGMzRnkwNUtmOTdaRSJ9.eyJhdWQiOiJodHRwczovL2ljMy50ZWFtcy5vZmZpY2UuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMzQ2YTFkMWQtZTc1Yi00NzUzLTkwMmItNzRlZDYwYWU3N2ExLyIsImlhdCI6MTcwNjE5NDAxOCwibmJmIjoxNzA2MTk0MDE4LCJleHAiOjE3MDYyODA3MTgsImFjciI6IjEiLCJhaW8iOiJBVFFBeS84VkFBQUFpb1lLS0dveEhaSEdzZTVkSmRFM0JIRkVXWS9Ec1R4aXRhVGxTaExDRmhrK1NlYlYyeEsrblY1THphQmY4dG0rIiwiYW1yIjpbInB3ZCJdLCJhcHBpZCI6IjVlM2NlNmMwLTJiMWYtNDI4NS04ZDRiLTc1ZWU3ODc4NzM0NiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiSmltw6luZXogKENPTlRSQUNUT1IpIiwiZ2l2ZW5fbmFtZSI6Ikd1aWxsZXJtbyIsImlwYWRkciI6IjIwMDE6MTI2MDoyMDM6OTU0ODo2NDJkOjRkYjI6MWExYzpjZGNlIiwibmFtZSI6Ikd1aWxsZXJtbyBKaW3DqW5leiAoQ29udHJhY3RvcikiLCJvaWQiOiJhNmI2OGEwNS1kNGZjLTQyN2UtYTg0ZC05ODQxMGJmYzA1OWQiLCJvbnByZW1fc2lkIjoiUy0xLTUtMjEtNDAwODg1MzM5MC0xNDgyNjA5NzEzLTkxMTc4NTE4NC0xNDkxODUxIiwicHVpZCI6IjEwMDMyMDAyQUJDOEExMTMiLCJyaCI6IjAuQVZjQUhSMXFORnZuVTBlUUszVHRZSzUzb1ZUd3FqbWxnY2RJcFBnQ2t3RWdsYm5iQUlVLiIsInNjcCI6IlRlYW1zLkFjY2Vzc0FzVXNlci5BbGwiLCJzdWIiOiJabFprSGlpMG5QQ1VzZ2J4OWtNTFJETHRiS0l4VXJqZ2FKZmZYeGw3WmtFIiwidGlkIjoiMzQ2YTFkMWQtZTc1Yi00NzUzLTkwMmItNzRlZDYwYWU3N2ExIiwidW5pcXVlX25hbWUiOiJndWlsbGVybW8uamltZW5lekBtYWlsLnVuaXRlYy5teCIsInVwbiI6Imd1aWxsZXJtby5qaW1lbmV6QG1haWwudW5pdGVjLm14IiwidXRpIjoiR0Q5N2tnY0l3MFNWd3FmYXdUdTVBQSIsInZlciI6IjEuMCIsInhtc19jYyI6WyJDUDEiXSwieG1zX3NzbSI6IjEifQ.CZXgovQzvQb_mD4Mkhdvh_Ss-B4HPrzZG3vxGpKOeLXRevkEH2zP1urAsFASpadecgfI81uA5Ow3zxBFYsm15PtVc4iCAuQpfuwPs_ZBXxXXuBOOoUPTeWmSwO2xIKRYWUX19sqNP68ZcWhwMqGUpyWaqv2C8pfsfR0njGkVunS3HPYIhq5O3wAJiNE7o0uqiHLh6CPEvUROjiWlZv85x0Ttp2UImM9UkG4K1qdLWsp2KpjqHscW7owNBfydG9E7CDmyF5x2kVcDbiWuBK_VcdzT95XBrjuLQKb-HgWWn8HqVEJhycICb53B5Xkq1MCBqoCzuBH3KHXPtu-OHTdxNQ';
+            const accessToken = 'eyJ0eXAiOiJKV1QiLCJub25jZSI6IldkV1FNc0tGWWZIeWloRUxZRjZOdnQ4RUs4TjRHeXB4YWsyV1pJTEkxVUkiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVCM25SeHRRN2ppOGVORGMzRnkwNUtmOTdaRSIsImtpZCI6IjVCM25SeHRRN2ppOGVORGMzRnkwNUtmOTdaRSJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zNDZhMWQxZC1lNzViLTQ3NTMtOTAyYi03NGVkNjBhZTc3YTEvIiwiaWF0IjoxNzA2MTk3OTgxLCJuYmYiOjE3MDYxOTc5ODEsImV4cCI6MTcwNjI4NDY4MSwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhWQUFBQWpkZzlaZjYwVmZRRFlHWnFxZjMwNVZGM1ZwbHBqZDhqVkxUQlZvbnRjTlY0Q2VWMFVvbnFYQko1V1FHN2ZCVHUiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkdyYXBoIEV4cGxvcmVyIiwiYXBwaWQiOiJkZThiYzhiNS1kOWY5LTQ4YjEtYThhZC1iNzQ4ZGE3MjUwNjQiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6IkppbcOpbmV6IChDT05UUkFDVE9SKSIsImdpdmVuX25hbWUiOiJHdWlsbGVybW8iLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiIyMDAxOjEyNjA6MjAzOjk1NDg6NjQyZDo0ZGIyOjFhMWM6Y2RjZSIsIm5hbWUiOiJHdWlsbGVybW8gSmltw6luZXogKENvbnRyYWN0b3IpIiwib2lkIjoiYTZiNjhhMDUtZDRmYy00MjdlLWE4NGQtOTg0MTBiZmMwNTlkIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTQwMDg4NTMzOTAtMTQ4MjYwOTcxMy05MTE3ODUxODQtMTQ5MTg1MSIsInBsYXRmIjoiMyIsInB1aWQiOiIxMDAzMjAwMkFCQzhBMTEzIiwicmgiOiIwLkFWY0FIUjFxTkZ2blUwZVFLM1R0WUs1M29RTUFBQUFBQUFBQXdBQUFBQUFBQUFEYkFJVS4iLCJzY3AiOiJEaXJlY3RvcnkuQWNjZXNzQXNVc2VyLkFsbCBEaXJlY3RvcnkuUmVhZFdyaXRlLkFsbCBHcm91cC5SZWFkV3JpdGUuQWxsIElkZW50aXR5Umlza0V2ZW50LlJlYWQuQWxsIG9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZCBVc2VyLlJlYWRXcml0ZS5BbGwgZW1haWwiLCJzaWduaW5fc3RhdGUiOlsia21zaSJdLCJzdWIiOiJZUXZvdkhobWtKZ0NhLTlBN1FVNXJsckVyanFwUlotU3N3ZVJNYnF1OU9BIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6Ik5BIiwidGlkIjoiMzQ2YTFkMWQtZTc1Yi00NzUzLTkwMmItNzRlZDYwYWU3N2ExIiwidW5pcXVlX25hbWUiOiJndWlsbGVybW8uamltZW5lekBtYWlsLnVuaXRlYy5teCIsInVwbiI6Imd1aWxsZXJtby5qaW1lbmV6QG1haWwudW5pdGVjLm14IiwidXRpIjoid0VuUlgxZUdnMEdGbUhQcVV3NHVBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiYjc5ZmJmNGQtM2VmOS00Njg5LTgxNDMtNzZiMTk0ZTg1NTA5Il0sInhtc19jYyI6WyJDUDEiXSwieG1zX3NzbSI6IjEiLCJ4bXNfc3QiOnsic3ViIjoiRi1lUkYzWm9fZVZNaEktUVBvOU1ManVoN2pPdjNJM3dacUVpQ0huMTQ2VSJ9LCJ4bXNfdGNkdCI6MTM0OTcyNzM1NX0.Gxjft2Jf9WMTZxW5VuSd3ud8MZ17lfpDSXdrjcjoyR4C04-IDwBOut8LpObw5GZMHTsRBfbn2tdj37FiAhVfvyaV7qSnev_9FhpDgOe4H_OwJBZddDoOdxz42K9p4wROB_kFUxEg5Vs6SW2SmoqIyBfPVAXLE4Y3v9EKGLXNZy-v1qXMOqA3elOGlDmW3_D5hkpCjnROus9tm4ddh5xBRkOd3VnKwnGTh4T2HtXSGwmM2FZXqvERMUgr7im99C2MWRSL-2b48wv7s11roPl7o3XY--7FmMhpOshTQYMwMb21BpyxRII-RrNgh7PJ75FmiDqayKHHbN7PxHjsl4otPA';
+            fetch('https:graph.microsoft.com/v1.0/me/onlineMeetings', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "participants": [
+                     {
+                         "identity": {
+                             "user": {
+                                 "id": "user_id"
+                             }
+                         }
+                     }
+                 ]
+                    /*{
+                        "from": {
+                            "id": "8:orgid:a6b68a05-d4fc-427e-a84d-98410bfc059d",
+                            "displayName": "Guillermo Jiménez (Contractor)",
+                            "endpointId": "01527300-2d4c-411b-9fa9-4952e331223e",
+                            "participantId": "390ab16a-c009-45b6-9c19-b36b594e885a",
+                            "languageId": "en-US"
+                        },
+                        "to": [
+                            {
+                                "id": "8:orgid:c05b1b5e-ab28-4889-b4a9-b46c1fc70f69",
+                                "participantId": "4c38e355-bb56-4c6d-a68b-c6db5588b6c6"
+                            }
+                        ]
+                    }*/
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Llamada iniciada:', data);
+                })
+                .catch(error => {
+                    console.error('Error al iniciar la llamada:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

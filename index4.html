@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAMS</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!--script async defer src="https://teams.microsoft.com/share/launcher.js"></script-->
+</head>
+<body>
+    <button id="teamsCallButton">Iniciar llamada en Teams</button>
+
+    <script src="https://statics.teams.microsoft.com/sdk/v1.10.0/js/MicrosoftTeams.min.js"></script>
+    <script>
+      // Inicializa la biblioteca Microsoft Teams
+      microsoftTeams.initialize();
+  
+      // Función para manejar el clic en el botón
+      function iniciarLlamada() {
+        // Puedes personalizar la llamada según tus necesidades
+        var llamada = {
+          users: ["guillermo.jimenez@mail.unitec.mx", "beatriz.encisovil@mail.unitec.mx"],
+          message: "Mensaje opcional"
+        };
+  
+        // Inicia la llamada en Microsoft Teams
+        microsoftTeams.calls.startCall(llamada);
+      }
+  
+      // Asocia la función al evento de clic del botón
+      document.getElementById("teamsCallButton").addEventListener("click", iniciarLlamada);
+    </script>
+
+</body>
+</html>
