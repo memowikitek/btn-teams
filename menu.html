@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAMS</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+<!-- Agrega el botón de llamadas -->
+<div style="display: flex; flex-direction: row; justify-content: center; padding: 60px 15px;">
+  <ul id="menu1"></ul>
+</div>
+
+<script>
+const {host,origin} = window.location; //console.log(host, origin);
+
+async function menu() {
+  const data = await getFetch(); console.log(data);
+  const m = document.querySelector('#menu1');
+  //const n = data.length; console.log(n);
+  if(m){//console.log(m);
+    for(let key in data){
+      m.innerHTML += `
+      <li>
+        <a href="${origin}/proyectos/teams/?opc=${key}">${key}</a>
+      </li>`
+    }
+
+  } 
+}
+
+const getFetch = async ()=>{
+    const response = await fetch('http://localhost/proyectos/teams/assets/enlaces.json');
+    const res = await response.json();//console.log(res);
+    const data = (res.data)?res.data:res;
+    return data;
+}
+
+menu();
+</script>
+
+</body>
+</html>

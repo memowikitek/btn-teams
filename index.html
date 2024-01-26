@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAMS</title>
     <link rel="icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script async defer src="https://teams.microsoft.com/share/launcher.js"></script>
 </head>
 <body>
+<!-- Agrega el botón de llamadas -->
+<div style="display: flex; flex-direction: row; justify-content: center; padding: 60px 15px;">
+    <button onclick="startTeamsCall()">Iniciar llamada Teams</button>
+</div>
 
-    <span
-    class="teams-share-button"
-    data-href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWM1MmJjOWEtNDVlNi00ZDc4LTk2NjctMjBiOTlkZTQyYmJh%40thread.v2/0?context=%7b%22Tid%22%3a%22346a1d1d-e75b-4753-902b-74ed60ae77a1%22%2c%22Oid%22%3a%22a6b68a05-d4fc-427e-a84d-98410bfc059d%22%7d"
-    data-msg-text="Default Message"
-    data-assign-title="Default Assignment Title"
-    data-assign-instr="Default Assignment Instructions"
-></span>
+<script>
+const valores = window.location.search;
+//Creamos la instancia
+const urlParams = new URLSearchParams(valores);
+//Accedemos a los valores
+let opc = urlParams.get('opc'); console.log(opc);
+
+  // Función para iniciar la llamada de Teams
+  async function startTeamsCall() {
+    const enlaces = await getFetch();
+    let linkUrl = enlaces[opc]; console.log(linkUrl);
+    // Aquí deberías tener lógica para obtener el token de acceso después de la autenticación
+    // Luego, utiliza el token para iniciar la llamada
+    const accessToken = '';
+
+    // URL para iniciar una llamada de Teams
+    const teamsCallUrl = `${linkUrl}`;
+
+    // Abre la ventana de la llamada
+    window.open(teamsCallUrl, '_blank');
+  }
+
+const getFetch = async ()=>{
+    const response = await fetch('http://localhost/proyectos/teams/assets/enlaces.json');
+    const res = await response.json();//console.log(res);
+    const data = (res.data)?res.data:res;
+    return data;
+}
+</script>
 
 </body>
 </html>

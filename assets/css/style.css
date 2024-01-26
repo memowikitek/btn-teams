@@ -35,6 +35,7 @@ h3 {
 }
 ul li {
   list-style: none;
+  padding: 18px;
 }
 ul li:hover {
   cursor: pointer;
