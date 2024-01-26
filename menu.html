@@ -33,7 +33,7 @@ async function menu() {
 }
 
 const getFetch = async ()=>{
-    const response = await fetch('http://localhost/proyectos/teams/assets/enlaces.json');
+    const response = await fetch(`${origin}${path}assets/enlaces.json`);
     const res = await response.json();//console.log(res);
     const data = (res.data)?res.data:res;
     return data;
