@@ -32,6 +32,7 @@ h3 {
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
   font-size: 18px;
+  text-transform: capitalize;
 }
 ul li {
   list-style: none;
