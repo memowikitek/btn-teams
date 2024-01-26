@@ -10,7 +10,7 @@
 <body>
 <!-- Agrega el botón de llamadas -->
 <div style="display: flex; flex-direction: row; justify-content: center; padding: 60px 15px;">
-    <button onclick="startTeamsCall()">Iniciar llamada Teams</button>
+    <button id="btn1" onclick="startTeamsCall()">Iniciar llamada Teams</button>
 </div>
 
 <script>
@@ -19,6 +19,17 @@ const valores = window.location.search;
 const urlParams = new URLSearchParams(valores);
 //Accedemos a los valores
 let opc = urlParams.get('opc'); console.log(opc);
+
+let textBtn = {
+  "call":"Iniciar llamada Teams",
+  "meeting":"Iniciar Reunión Abierta Teams",
+  "meetup-join":"Agendar Reunión Teams"
+}
+
+let btn = document.querySelector('#btn1');
+if(btn){
+  btn.innerHTML = textBtn[opc];
+}
 
   // Función para iniciar la llamada de Teams
   async function startTeamsCall() {
