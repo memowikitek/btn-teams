@@ -15,6 +15,7 @@
 
 <script>
 const {host,origin} = window.location; //console.log(host, origin);
+let path = (host=='localhost')?'/proyectos/teams/':'/btn-teams/';
 
 async function menu() {
   const data = await getFetch(); console.log(data);
@@ -24,7 +25,7 @@ async function menu() {
     for(let key in data){
       m.innerHTML += `
       <li>
-        <a href="${origin}/proyectos/teams/?opc=${key}">${key}</a>
+        <a href="${origin}${path}?opc=${key}">${key}</a>
       </li>`
     }
 

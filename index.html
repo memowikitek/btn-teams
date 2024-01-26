@@ -14,6 +14,9 @@
 </div>
 
 <script>
+const {host,origin} = window.location; //console.log(host, origin);
+let path = (host=='localhost')?'/proyectos/teams/':'/btn-teams/';
+
 const valores = window.location.search;
 //Creamos la instancia
 const urlParams = new URLSearchParams(valores);
@@ -47,7 +50,7 @@ if(btn){
   }
 
 const getFetch = async ()=>{
-    const response = await fetch('http://localhost/proyectos/teams/assets/enlaces.json');
+    const response = await fetch(`${origin}${path}assets/enlaces.json`);
     const res = await response.json();//console.log(res);
     const data = (res.data)?res.data:res;
     return data;
