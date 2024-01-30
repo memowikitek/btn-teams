@@ -34,8 +34,8 @@ if(btn){
   btn.innerHTML = textBtn[opc];
 }
 
-  // Función para iniciar la llamada de Teams
-  async function startTeamsCall() {
+// Función para iniciar la llamada de Teams
+async function startTeamsCall() {
     const enlaces = await getFetch();
     let linkUrl = enlaces[opc]; console.log(linkUrl);
     // Aquí deberías tener lógica para obtener el token de acceso después de la autenticación
@@ -47,13 +47,13 @@ if(btn){
 
     // Abre la ventana de la llamada
     window.open(teamsCallUrl, '_blank');
-  }
+}
 
 const getFetch = async ()=>{
-    const response = await fetch(`${origin}${path}assets/enlaces.json`);
-    const res = await response.json();//console.log(res);
-    const data = (res.data)?res.data:res;
-    return data;
+  const response = await fetch(`${origin}${path}assets/enlaces.json`);
+  const res = await response.json();//console.log(res);
+  const data = (res.data)?res.data:res;
+  return data;
 }
 </script>
 
